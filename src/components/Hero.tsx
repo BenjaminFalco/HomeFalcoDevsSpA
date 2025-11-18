@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -10,46 +9,31 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-10" />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-gradient-to-b from-background to-secondary/20">
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00c1ff08_1px,transparent_1px),linear-gradient(to_bottom,#00c1ff08_1px,transparent_1px)] bg-[size:48px_48px]" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Desarrollamos y automatizamos{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              tu negocio con IA
-            </span>
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+            Potenciamos y damos{" "}
+            <span className="text-primary">
+              presencia digital real
+            </span>{" "}
+            a tu empresa
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            Consultoría especializada en software, IA, automatización e integraciones para empresas que buscan resultados.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+            Servicios digitales accesibles y profesionales para pymes y negocios emergentes que buscan destacar en el mundo digital.
           </p>
 
-          <div className="flex items-center justify-center gap-2 text-muted-foreground">
-            <CheckCircle2 className="w-5 h-5 text-accent" />
-            <span>Profesionales certificados en AWS para despliegues seguros en la nube</span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="pt-4">
             <Button
               size="lg"
               onClick={() => scrollToSection("contacto")}
-              className="group"
+              className="text-lg px-8 py-6 h-auto"
             >
-              Agendar una llamada
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection("servicios")}
-            >
-              Ver servicios
+              Contáctanos
             </Button>
           </div>
         </div>

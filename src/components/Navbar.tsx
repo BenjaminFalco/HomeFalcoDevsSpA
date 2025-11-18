@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import logo from "@/assets/falcodevs-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +14,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="FalcoDevs" className="h-10 w-10" />
+            <span className="text-xl font-bold text-foreground">
               FalcoDevs
             </span>
           </div>
@@ -26,16 +27,16 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Inicio
+            </button>
+            <button
               onClick={() => scrollToSection("servicios")}
               className="text-foreground hover:text-primary transition-colors"
             >
               Servicios
-            </button>
-            <button
-              onClick={() => scrollToSection("proceso")}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Proceso
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
@@ -43,9 +44,6 @@ const Navbar = () => {
             >
               Contacto
             </button>
-            <Button onClick={() => scrollToSection("contacto")}>
-              Registrarse
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -61,16 +59,19 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4 space-y-4">
             <button
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setIsOpen(false);
+              }}
+              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
+            >
+              Inicio
+            </button>
+            <button
               onClick={() => scrollToSection("servicios")}
               className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
             >
               Servicios
-            </button>
-            <button
-              onClick={() => scrollToSection("proceso")}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors py-2"
-            >
-              Proceso
             </button>
             <button
               onClick={() => scrollToSection("contacto")}
@@ -78,12 +79,6 @@ const Navbar = () => {
             >
               Contacto
             </button>
-            <Button
-              onClick={() => scrollToSection("contacto")}
-              className="w-full"
-            >
-              Registrarse
-            </Button>
           </div>
         )}
       </div>
