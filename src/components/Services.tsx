@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 
 const landingExpressLogo =
-  "https://falcodevs.blob.core.windows.net/falcodevs-images/landingexpress-logo-fd.png";
+  "https://falcodevs.blob.core.windows.net/falcodevs-images/logoLE_transparent.png";
 const digitalAgentsLogo =
-  "https://falcodevs.blob.core.windows.net/falcodevs-images/falcodigitalagents-logo-fd.png";
+  "https://falcodevs.blob.core.windows.net/falcodevs-images/logoFDA_transparent.png";
 
 const services = [
   {

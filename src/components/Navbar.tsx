@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTheme } from "@/hooks/useTheme";
 
 const falcodevsLogo =
-  "https://falcodevs.blob.core.windows.net/falcodevs-images/falcodevs-logo-fd.png";
+  "https://falcodevs.blob.core.windows.net/falcodevs-images/falcodevs-logo-DaBz84rS.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
