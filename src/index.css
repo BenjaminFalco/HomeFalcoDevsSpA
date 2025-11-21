@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* definicion del diseño del sistema de colores
-*/
-
+/* definicion del diseño del sistema de colores */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -16,9 +14,9 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-      --primary: 211 80% 38%;
-      --primary-foreground: 0 0% 100%;
-
+    /* 🔵 Azul corporativo oscuro (modo claro) */
+    --primary: 211 80% 38%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
@@ -26,7 +24,8 @@
     --muted: 0 0% 95%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 193 100% 50%;
+    /* Acento igualado al azul */
+    --accent: 211 80% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -34,14 +33,22 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 193 100% 50%;
+
+    /* Ring igualado */
+    --ring: 211 80% 38%;
 
     --radius: 0.5rem;
     
-    --gradient-hero: linear-gradient(135deg, hsl(193 100% 50%), hsl(180 100% 40%));
+    /* Gradiente corregido */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(211 80% 38%),
+      hsl(200 80% 30%)
+    );
+
     --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
     --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-strong: 0 8px 24px rgba(0, 193, 255, 0.15);
+    --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -51,7 +58,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 193 100% 50%;
+    --sidebar-ring: 211 80% 38%;
   }
 
   .dark {
@@ -64,7 +71,8 @@
     --popover: 0 0% 12%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 193 100% 50%;
+    /* 🔵 Azul oscuro uniforme en modo oscuro */
+    --primary: 211 80% 38%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 15%;
@@ -73,7 +81,7 @@
     --muted: 0 0% 18%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 193 100% 50%;
+    --accent: 211 80% 38%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -81,21 +89,29 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 193 100% 50%;
+
+    /* Ring igualado también */
+    --ring: 211 80% 38%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(193 100% 50%), hsl(180 100% 40%));
+    /* Gradientes corregidos */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(211 80% 38%),
+      hsl(200 80% 30%)
+    );
+
     --gradient-section: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
     --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-strong: 0 8px 24px rgba(0, 193, 255, 0.2);
+    --shadow-strong: 0 8px 24px rgba(0, 0, 0, 0.2);
     
     --sidebar-background: 0 0% 12%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 193 100% 50%;
+    --sidebar-primary: 211 80% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 193 100% 50%;
+    --sidebar-ring: 211 80% 38%;
   }
 }
 
