@@ -1,5 +1,5 @@
 const falcodevsLogo =
-  "https://falcodevs.blob.core.windows.net/falcodevs-images/falcodevs-logo-DaBz84rS.png";
+  "/src/assets/logoHome.png";
 
 const Footer = () => {
   return (

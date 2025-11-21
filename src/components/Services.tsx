@@ -1,24 +1,24 @@
 import { Button } from "@/components/ui/button";
 
 const landingExpressLogo =
-  "https://falcodevs.blob.core.windows.net/falcodevs-images/logoLE_transparent.png";
+  "/src/assets/logoLE_transparent.png";
 const digitalAgentsLogo =
-  "https://falcodevs.blob.core.windows.net/falcodevs-images/logoFDA_transparent.png";
+  "/src/assets/logoFDA_transparent.png";
 
 const services = [
   {
     logo: landingExpressLogo,
     title: "LandingExpress",
     description:
-      "Landing pages rápidas, personalizadas y pensadas para que tu marca gane visibilidad, presencia y clientes reales sin complicaciones técnicas.",
-    link: "https://landingexpressfd.vercel.app/",
+      "Sucursal Virtual rápida y personalizada, ideal para potenciar tu presencia en la web.",
+    link: "/src/assets/logoLE_transparent.png",
   },
   {
     logo: digitalAgentsLogo,
-    title: "FalcoDigitalAgents",
+    title: "Automatización Inteligente",
     description:
       "Automatización inteligente y agentes digitales que liberan tiempo, reducen tareas repetitivas y elevan la eficiencia de tu equipo.",
-    link: "https://falco-digital-agent.vercel.app/",
+    link: "src/assets/logoFDA_transparent.png",
   },
 ];
 

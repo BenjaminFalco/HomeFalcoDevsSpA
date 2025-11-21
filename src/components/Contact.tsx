@@ -32,10 +32,34 @@ const Contact = () => {
     setIsSubmitting(true);
     setFeedback(null);
 
+    // ⬇️ Leer y validar variables de entorno
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Faltan variables de entorno de EmailJS:", {
+        serviceId,
+        templateId,
+        publicKey,
+      });
+      setFeedback({
+        type: "error",
+        message: "Falta configurar el servicio de correo. Intenta más tarde.",
+      });
+      toast({
+        title: "Error de configuración",
+        description: "Faltan datos de EmailJS en las variables de entorno.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
     const payload = {
-      service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      user_id: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      service_id: serviceId,
+      template_id: templateId,
+      user_id: publicKey,
       template_params: {
         name: formData.name,
         email: formData.email,
@@ -55,7 +79,9 @@ const Contact = () => {
       });
 
       if (!response.ok) {
-        throw new Error("No se pudo enviar el mensaje");
+        const errorText = await response.text().catch(() => "");
+        console.error("EmailJS error:", response.status, errorText);
+        throw new Error(errorText || "No se pudo enviar el mensaje");
       }
 
       setFeedback({ type: "success", message: "Mensaje enviado. Te contactaremos pronto." });
@@ -65,8 +91,11 @@ const Contact = () => {
       });
       setFormData({ name: "", email: "", phone: "", empresa: "", message: "" });
     } catch (error) {
-      console.error(error);
-      setFeedback({ type: "error", message: "Hubo un problema al enviar tu mensaje. Intenta nuevamente." });
+      console.error("❌ Error al enviar el mensaje:", error);
+      setFeedback({
+        type: "error",
+        message: "Hubo un problema al enviar tu mensaje. Intenta nuevamente.",
+      });
       toast({
         title: "Error al enviar",
         description: "Revisa los datos o intenta más tarde.",
@@ -159,7 +188,9 @@ const Contact = () => {
               required
             />
             <Button type="submit" className="w-full h-12 text-base" disabled={isSubmitting}>
-              {isSubmitting ? "Enviando..." : (
+              {isSubmitting ? (
+                "Enviando..."
+              ) : (
                 <span className="inline-flex items-center gap-2">
                   <Send className="h-4 w-4" />
                   Enviar mensaje
