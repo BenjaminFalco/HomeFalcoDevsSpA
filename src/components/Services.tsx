@@ -11,14 +11,14 @@ const services = [
     title: "LandingExpress",
     description:
       "Sucursal Virtual rápida y personalizada, ideal para potenciar tu presencia en la web.",
-    link: "/src/assets/logoLE_transparent.png",
+    link: "https://landingexpressfd.vercel.app/",
   },
   {
     logo: digitalAgentsLogo,
     title: "Automatización Inteligente",
     description:
       "Automatización inteligente y agentes digitales que liberan tiempo, reducen tareas repetitivas y elevan la eficiencia de tu equipo.",
-    link: "src/assets/logoFDA_transparent.png",
+    link: "https://falco-digital-agent.vercel.app/",
   },
 ];
 
